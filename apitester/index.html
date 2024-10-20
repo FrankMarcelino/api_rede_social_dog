@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Tester</title>
+  </head>
+  <body>
+    <script>
+      const body = {
+        username: "frank",
+        email: "8Qqg6@example.com",
+        password: "frank123",
+      };
+      fetch("http://dogsapi.local/json/api/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      }).then((response) => {
+        console.log(response);
+      });
+    </script>
+  </body>
+</html>

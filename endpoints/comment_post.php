@@ -1,4 +1,5 @@
 <?php
+//http://dogsapi.local/json/api/comment/1
 function api_comment_post($request) {
   $user = wp_get_current_user();
   $user_id = $user->ID;

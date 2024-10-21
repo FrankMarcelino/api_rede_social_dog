@@ -12,4 +12,10 @@ function change_api($slug) {
   return 'json';
 }
 add_filter('rest_url_prefix', 'change_api');
+
+function expire_token() {
+  return time() + (60*60*24);
+}
+add_action('rest_api_init', 'expire_token');
+
 ?>

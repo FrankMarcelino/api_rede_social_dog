@@ -6,21 +6,31 @@
     <title>API Tester</title>
   </head>
   <body>
+    <button id="testar">Testar</button>
     <script>
       const body = {
         username: "frank",
-        email: "8Qqg6@example.com",
         password: "frank123",
       };
-      fetch("http://dogsapi.local/json/api/user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      }).then((response) => {
-        console.log(response);
-      });
+      function testar() {
+        fetch("http://dogsapi.local/json/jwt-auth/v1/token", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization:
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vZG9nc2FwaS5sb2NhbCIsImlhdCI6MTcyOTQ2OTA4OSwibmJmIjoxNzI5NDY5MDg5LCJleHAiOjE3MzAwNzM4ODksImRhdGEiOnsidXNlciI6eyJpZCI6IjIifX19.jsztABtuKNc3N3i6QoaSfu4DoTahgAB92H2JwZpzDcw",
+          },
+          body: JSON.stringify(body),
+        })
+          .then((response) => {
+            console.log(response);
+            return response.json();
+          })
+          .then((json) => {
+            console.log(json);
+          });
+      }
+      document.getElementById("testar").addEventListener("click", testar);
     </script>
   </body>
 </html>

@@ -21,6 +21,7 @@ require_once $dirbase . '/endpoints/comment_get.php';
 
 require_once $dirbase . '/endpoints/password.php';
 
+
 // trata imagens grandes
 update_option('large_size_w', 1000);
 update_option('large_size_h', 1000);
